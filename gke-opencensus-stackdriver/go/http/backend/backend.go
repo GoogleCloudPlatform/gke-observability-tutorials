@@ -54,6 +54,7 @@ func callRemoteEndpoint() string {
 }
 
 // [ END callremote ]
+
 // [ START mainhandler ]
 func mainHandler(w http.ResponseWriter, r *http.Request) {
 	// get context from incoming request
