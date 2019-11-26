@@ -36,7 +36,7 @@ var (
 	location  = os.Getenv("LOCATION")
 )
 
-// [ START callremote ]
+// [START callremote]
 // make an outbound call
 func callRemoteEndpoint() string {
 	resp, err := http.Get(destURL)
@@ -53,9 +53,9 @@ func callRemoteEndpoint() string {
 	return strconv.Itoa(resp.StatusCode)
 }
 
-// [ END callremote ]
+// [END callremote]
 
-// [ START mainhandler ]
+// [START mainhandler]
 func mainHandler(w http.ResponseWriter, r *http.Request) {
 	// get context from incoming request
 	ctx := r.Context()
@@ -69,8 +69,8 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// [ END mainhandler ]
-// [ START main ]
+// [END mainhandler]
+// [START main]
 func main() {
 	// set up Stackdriver exporter
 	exporter, err := stackdriver.NewExporter(stackdriver.Options{ProjectID: projectID, Location: location})
@@ -95,4 +95,4 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", handler))
 }
 
-// [ END main ]
+// [END main]
